@@ -50,6 +50,43 @@ input:focus-visible {
   outline-offset: 3px;
 }
 
+.skip-link {
+  position: fixed;
+  top: -60px;
+  right: 20px;
+  z-index: 1000;
+  background: #A8842F;
+  color: #07140f;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-family: "Cairo", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  transition: top 0.25s ease;
+}
+.skip-link:focus-visible {
+  top: 16px;
+  outline: 2px solid #e6e6e6;
+  outline-offset: 3px;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 200;
+  background: rgba(230, 230, 230, 0.06);
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #A8842F, #C4442E);
+  transition: width 0.1s linear;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -292,7 +329,7 @@ input:focus-visible {
 
 .reveal-text {
   max-width: 620px;
-  background: linear-gradient(90deg, rgba(3, 8, 6, 0.55) 0%, rgba(3, 8, 6, 0.25) 70%, transparent 100%);
+  background: linear-gradient(90deg, rgba(3, 8, 6, 0.68) 0%, rgba(3, 8, 6, 0.38) 70%, transparent 100%);
   padding: 40px;
   border-right: 3px solid rgba(230, 230, 230, 0.55);
   transform: translateY(50px);
@@ -355,6 +392,23 @@ input:focus-visible {
   color: #A8842F;
   letter-spacing: 0.3px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.scene-mini-cta {
+  display: inline-block;
+  margin-top: 22px;
+  font-family: "Cairo", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #e6e6e6;
+  border-bottom: 1px solid rgba(230, 230, 230, 0.4);
+  padding-bottom: 3px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  transition: color 0.3s, border-color 0.3s;
+}
+.scene-mini-cta:hover {
+  color: #C4442E;
+  border-color: #C4442E;
 }
 
 #bg-06 + .content-overlay .reveal-text {
@@ -550,6 +604,13 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  text-align: right;
+}
+.pledge-section form .field-label {
+  font-size: 13px;
+  color: #8b9992;
+  letter-spacing: 0.5px;
+  margin-bottom: -10px;
 }
 .pledge-section form input {
   padding: 15px 20px;
@@ -600,9 +661,13 @@ input:focus-visible {
   letter-spacing: 0.5px;
   direction: rtl;
 }
-.hashtags-strip span {
+.hashtags-strip a {
   margin: 0 6px;
   color: #A8842F;
+  transition: color 0.3s;
+}
+.hashtags-strip a:hover {
+  color: #e6e6e6;
 }
 
 .footer {

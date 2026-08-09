@@ -5,10 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الظل | حملة توعية لمكافحة المخدرات</title>
     <meta name="description" content="الإدمان لا يسجن الجسد وحده — حملة توعية بصرية وإرشادية لمكافحة المخدرات.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+
+    <!-- Open Graph / Twitter Card — للمشاركة على السوشيال ميديا -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kakramah.github.io/shadow-drug-awareness/">
+    <meta property="og:title" content="الظل | حملة توعية لمكافحة المخدرات">
+    <meta property="og:description" content="الإدمان لا يسجن الجسد وحده — يمدّ ظله حتى يلامس من لم يُدمن بعد. حملة توعية بصرية وإرشادية.">
+    <meta property="og:image" content="https://kakramah.github.io/shadow-drug-awareness/images/scene6.jpg">
+    <meta property="og:locale" content="ar_AR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="الظل | حملة توعية لمكافحة المخدرات">
+    <meta name="twitter:description" content="الإدمان لا يسجن الجسد وحده — يمدّ ظله حتى يلامس من لم يُدمن بعد.">
+    <meta name="twitter:image" content="https://kakramah.github.io/shadow-drug-awareness/images/scene6.jpg">
+
     <!-- Local Fonts only — defined in css/main.css -->
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
+    <a href="#scene-01" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+    <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar"></div></div>
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -109,6 +129,7 @@
                     <span class="scene-tag">06 / الحقيقة</span>
                     <h2 class="scene-title">الإدمان لا يسجن الجسد وحده</h2>
                     <p class="scene-copy">خلف كل رقم في التقارير، يوجد طفل لم يكمل طفولته. الإدمان لا يسجن الجسد وحده — يمدّ ظله حتى يلامس من لم يُدمن بعد.<br><span class="punchline">«مواجهته ليست معركة فرد، بل مسؤولية وطن.»</span></p>
+                    <a href="#hotline" class="scene-mini-cta">بحاجة لمساعدة الآن؟ ← قنوات التبليغ والدعم</a>
                 </div>
             </div>
         </section>
@@ -213,9 +234,9 @@
 
         <!-- وسوم الحملة -->
         <div class="hashtags-strip">
-            <span>#سوريا_دون_مخدرات</span>
-            <span>#مكافحة_المخدرات</span>
-            <span>#الظل_السجن_الحقيقي</span>
+            <a href="https://twitter.com/hashtag/سوريا_دون_مخدرات" target="_blank" rel="noopener">#سوريا_دون_مخدرات</a>
+            <a href="https://twitter.com/hashtag/مكافحة_المخدرات" target="_blank" rel="noopener">#مكافحة_المخدرات</a>
+            <a href="https://twitter.com/hashtag/الظل_السجن_الحقيقي" target="_blank" rel="noopener">#الظل_السجن_الحقيقي</a>
         </div>
 
         <!-- Pledge Section -->
@@ -224,7 +245,8 @@
                 <h3>وثيقة الوعي</h3>
                 <p>سجّل التزامك أن تتحدث لا أن تحكم، وأن تكون سنداً لا حاجزاً لمن يحتاج مساعدة.</p>
                 <form id="pledgeForm" onsubmit="event.preventDefault(); submitPledge();">
-                    <input type="text" id="citizenName" placeholder="الاسم أو الرمز" required>
+                    <label for="citizenName" class="field-label">الاسم أو الرمز</label>
+                    <input type="text" id="citizenName" name="citizenName" placeholder="مثال: خلدون أو أي رمز تختاره" required>
                     <button type="submit" class="submit-btn">إطلاق الالتزام</button>
                     <div id="formFeedback" class="form-feedback"></div>
                 </form>

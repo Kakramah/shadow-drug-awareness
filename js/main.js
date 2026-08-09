@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const parallaxBgs = document.querySelectorAll('.parallax-bg');
     const revealTexts = document.querySelectorAll('.reveal-text');
+    const progressBar = document.querySelector('.scroll-progress-bar');
 
     // Dot Navigation — يربط المشاهد الست كخيط تنقّل واحد
     const dots = document.querySelectorAll('.dot-nav .dot');
@@ -48,6 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 text.classList.add('visible');
             }
         });
+
+        // 3. Full-page scroll progress
+        if (progressBar) {
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+            progressBar.style.width = pct + '%';
+        }
     });
 
     window.dispatchEvent(new Event('scroll'));
