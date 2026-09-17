@@ -1,5 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ─── Hamburger / Mobile Drawer ────────────────────────
+    const hamburger = document.getElementById('hamburgerBtn');
+    const drawer    = document.getElementById('navDrawer');
+    const overlay   = document.getElementById('navOverlay');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    function openDrawer() {
+        drawer.classList.add('open');
+        hamburger.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+        drawer.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburger && drawer) {
+        hamburger.addEventListener('click', () => {
+            drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+        });
+        overlay.addEventListener('click', closeDrawer);
+        drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeDrawer();
+        });
+    }
+    // ─────────────────────────────────────────────────────
+
     const parallaxBgs = document.querySelectorAll('.parallax-bg');
     const revealTexts = document.querySelectorAll('.reveal-text');
     const progressBar = document.querySelector('.scroll-progress-bar');
